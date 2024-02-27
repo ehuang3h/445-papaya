@@ -28,11 +28,11 @@ public class FollowPlayer : MonoBehaviour
             if (dist > followRadius)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                Debug.Log("Following.");
+    //            Debug.Log("Following.");
             }
-            else Debug.Log("Max distance reached. Dist: " +dist);
+  //          else Debug.Log("Max distance reached. Dist: " +dist);
         }
-        else Debug.Log("Not following.");
+//        else Debug.Log("Not following.");
     }
 
     public void startFollowing()

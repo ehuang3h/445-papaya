@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCDialogue : MonoBehaviour
 {
-    private int count = 0;
+    public TextMeshProUGUI text;
 
     public void Interact()
     {
-        count++;
-        Debug.Log("Interaction successful. Interacted with: " + count);
+        Debug.Log("Interaction successful.");
+        text.text = ("Interacting with the NPC.");
+    }
+
+    public void EndConversation()
+    {
+        text.text = null;
     }
 }
