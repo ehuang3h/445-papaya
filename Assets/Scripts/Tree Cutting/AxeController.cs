@@ -8,7 +8,7 @@ public class AxeController : MonoBehaviour
     private Rigidbody axeRb;
 
     //strength needed to break tree 
-    private float breakThreshold = 8f; 
+    private float breakThreshold = 1f; 
 
     void Start()
     {
@@ -33,7 +33,12 @@ public class AxeController : MonoBehaviour
             //check that impact is strong enough to break tree
             if (modifiedForce > breakThreshold)
             {
-                collision.gameObject.transform.parent.GetComponent<TreeController>().BreakTree();
+                collision.gameObject.GetComponent<TreeController>().BreakTree();
+            }
+            else
+            {
+                Debug.Log("not strong enough");
+                Debug.Log(modifiedForce);
             }
         }
     }
